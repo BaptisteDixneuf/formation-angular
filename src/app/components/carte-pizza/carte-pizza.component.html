@@ -1,0 +1,18 @@
+<div class="container">
+  <p>
+    <ng-container *ngIf="pizzas">  
+        <div *ngFor="let pizza of pizzas"> 
+            <mat-card >
+              <h1 [routerLink]="['/pizza', pizza.name]"> {{pizza.name}} </h1>
+              <p>{{pizza.ingredients}} </p>
+              <div *ngIf="pizza.isVegetarien">
+                  <img src="./assets/vege.jpg" style="width:80px;">
+              </div>          
+              <p>{{pizza.price| currency:'EUR':true:'1.2-2'}} </p>
+              <button mat-raised-button appIsConnected color="primary" (click)="valuechange($event, pizza)">Supprimer</button>
+            </mat-card>
+            <p></p>
+        </div>  
+    </ng-container>
+  </p>
+</div>

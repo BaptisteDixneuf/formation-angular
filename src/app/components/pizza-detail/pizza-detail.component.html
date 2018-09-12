@@ -1,0 +1,18 @@
+<div class="container" *ngIf="pizza">
+    <mat-card>
+      <h1> {{pizza.name}} </h1>
+      <p>{{pizza.ingredients}} </p>
+      <div *ngIf="pizza.isVegetarien">
+          <img src="./assets/vege.jpg" style="width:80px;">
+      </div>          
+      <p>{{pizza.price| currency:'EUR':true:'1.2-2'}} </p>
+    </mat-card>    
+  </div>
+  <div class="container" *ngIf="!pizza">
+      <mat-card>Cette pizza n'existe pas</mat-card> 
+  </div>
+  <div class="container">
+    <p>
+      <button mat-raised-button color="primary" (click)="goBack()">go back</button>
+    </p>
+  </div>

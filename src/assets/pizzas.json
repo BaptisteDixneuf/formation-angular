@@ -1,0 +1,31 @@
+[{  
+    "name": "4 fromages",
+    "isVegetarien": true,
+    "ingredients": "tomates, fromages",
+    "price": 4.00
+  },
+  {
+    "name": "Royale",
+    "isVegetarien": false,
+    "ingredients": "tomates, fromages",
+    "price": 12.00
+  },
+  {
+    "name": "Hawai",
+    "isVegetarien": true,
+    "ingredients": "tomates, fromages, frites",
+    "price": 12.00
+  },
+  {
+    "name": "Cho Cho",
+    "isVegetarien": false,
+    "ingredients": "tomates, fromages, chocolat",
+    "price": 12.00
+  },
+  {
+    "name": "Fromages",
+    "isVegetarien": true,
+    "ingredients": "tomates, fromages, camembert",
+    "price": 12.00
+  }
+]

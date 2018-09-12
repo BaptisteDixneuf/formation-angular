@@ -1,0 +1,28 @@
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="R" value="" maxlength="3" type="number" [(ngModel)]="red" name="red-input" [min]="0" [max]="250" (change)="valuechange($event)">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="G" value="" maxlength="3" type="number" [(ngModel)]="green" name="green-input" [min]="0" [max]="250" (change)="valuechange($event)">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="B" value="" maxlength="3" type="number" [(ngModel)]="blue" name="blue-input" [min]="0" [max]="250" (change)="valuechange($event)">
+  </mat-form-field>  
+
+  <p>
+    <label for="red-slider">Red Slider</label>
+    <mat-slider thumbLabel name="red-slider" tickInterval="1" [min]="0" [max]="250" [(ngModel)]="red" (change)="valuechange($event)"></mat-slider>
+    <label for="green-slider">Green Slider</label>
+    <mat-slider thumbLabel name="green-slider" tickInterval="1" [min]="0" [max]="250" [(ngModel)]="green" (change)="valuechange($event)"></mat-slider>
+    <label for="blue-slider">Blue Slider</label>
+    <mat-slider thumbLabel name="blue-slider" tickInterval="1" [min]="0" [max]="250" [(ngModel)]="blue" (change)="valuechange($event)"></mat-slider>
+  </p>
+</form>
+
+<div class="color-picker" [style.background-color] = "'rgb(' +red+ ', ' +green+ ' ,  ' +blue+ ')'"></div>
+<p></p>
+<div class="color-picker" [style.background-color] = "colorFlag"></div>
+
+<p>{{welcome}}</p>

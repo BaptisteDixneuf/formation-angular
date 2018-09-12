@@ -1,0 +1,16 @@
+<mat-toolbar>
+  <span>Mon appli</span>
+  <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item routerLink="/accueil">Accueil</button>
+    <button mat-menu-item routerLink="/contact">Contact</button>
+    <button mat-menu-item routerLink="/se-connecter">Se connecter</button>
+    <button mat-menu-item routerLink="/inscription">Inscription</button>
+    <button mat-menu-item routerLink="/color-picker">Color Picker</button>
+    <button mat-menu-item routerLink="/carte-pizza">Carte Pizza</button>
+    <button mat-menu-item routerLink="/add-pizza" appIsConnected>Add Pizza</button>
+
+  </mat-menu>	
+</mat-toolbar>
+
+<router-outlet></router-outlet>

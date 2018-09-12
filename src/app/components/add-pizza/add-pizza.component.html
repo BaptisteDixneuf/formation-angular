@@ -1,0 +1,57 @@
+<div class="container">
+  <form class="example-form" #pizzaForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Nom de la pizza" [(ngModel)]="pizza.name" name="name" required minlength="4" #name="ngModel">
+    </mat-form-field>
+
+    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+        class="alert alert-danger">
+
+      <div *ngIf="name.errors.required">
+        Name is required.
+      </div>
+      <div *ngIf="name.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>   
+    </div>
+
+    <mat-slide-toggle [(ngModel)]="pizza.isVegetarien" name="isVegetarien">Vegetarienne</mat-slide-toggle>
+
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Prix de la pizza" value=""  type="number"  name="price"
+        name="price-input" [min]="0" [(ngModel)]="pizza.price" required  #price="ngModel">
+    </mat-form-field>
+
+    <div *ngIf="price.invalid && (price.dirty || price.touched)"
+        class="alert alert-danger">
+
+      <div *ngIf="price.errors.required">
+        Price is required.
+      </div>     
+    </div>
+
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Ingredients"  [(ngModel)]="pizza.ingredients" name="ingredients" required minlength="4" #ingredients="ngModel"></textarea>
+    </mat-form-field>
+
+    <div *ngIf="ingredients.invalid && (ingredients.dirty || ingredients.touched)"
+        class="alert alert-danger">
+
+      <div *ngIf="ingredients.errors.required">
+        Ingredients is required.
+      </div>
+      <div *ngIf="ingredients.errors.minlength">
+        Ingredients must be at least 4 characters long.
+      </div>   
+    </div>
+
+    <button type="submit" mat-raised-button color="primary"  [disabled]="pizzaForm.invalid">Ajouter la pizza</button>
+
+    <div class="submitted-message" *ngIf="pizzaForm.submitted">
+        <p>Ajout de la pizza!</p>
+        <button mat-raised-button color="primary" (click)="pizzaForm.resetForm({})">Reset</button>
+    </div>
+
+  </form>
+</div>
